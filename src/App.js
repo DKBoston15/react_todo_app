@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import TodoForm from "./Components/TodoForm";
 import TodoList from "./Components/TodoList";
+import Typography from "@material-ui/core/Typography";
 
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
@@ -45,6 +46,7 @@ function App() {
 
     return (
         <div className="App">
+            <Typography varaint="h1">Todo</Typography>
             <TodoForm addTodo={addTodo} />
             <TodoList
                 todos={todos}

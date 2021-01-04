@@ -3,13 +3,7 @@ import Todo from "./Todo";
 
 function TodoList({ todos, toggleComplete, removeTodo }) {
     return (
-        <ul
-            style={{
-                color: "black",
-                display: "flex",
-                alignItems: "center",
-                flexDirection: "column"
-            }}>
+        <ul className="todo-list">
             {todos.map((todo) => (
                 <Todo
                     todo={todo}
