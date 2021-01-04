@@ -2,7 +2,10 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import TodoForm from "./Components/TodoForm";
 import TodoList from "./Components/TodoList";
-import Typography from "@material-ui/core/Typography";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
 
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
@@ -46,13 +49,21 @@ function App() {
 
     return (
         <div className="App">
-            <Typography varaint="h1">Todo</Typography>
-            <TodoForm addTodo={addTodo} />
-            <TodoList
-                todos={todos}
-                toggleComplete={toggleComplete}
-                removeTodo={removeTodo}
-            />
+            <div className="cardWrapper">
+                <Card className="todo-card">
+                    <h1>Todos</h1>
+                    <CardContent>
+                        <TodoForm addTodo={addTodo} />
+                    </CardContent>
+                    <CardActions>
+                        <TodoList
+                            todos={todos}
+                            toggleComplete={toggleComplete}
+                            removeTodo={removeTodo}
+                        />
+                    </CardActions>
+                </Card>
+            </div>
         </div>
     );
 }

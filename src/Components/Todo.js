@@ -1,7 +1,18 @@
 import React from "react";
-import { Checkbox, IconButton, ListItem, Typography } from "@material-ui/core";
+import { Checkbox, IconButton, ListItem } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
 import CloseIcon from "@material-ui/icons/Close";
 function Todo({ todo, toggleComplete, removeTodo }) {
+    const GreenCheckbox = withStyles({
+        root: {
+            color: "var(--primary)",
+            "&$checked": {
+                color: "var(--primary)"
+            }
+        },
+        checked: {}
+    })((props) => <Checkbox color="default" {...props} />);
+
     let handleCheckboxClick = () => {
         toggleComplete(todo.id);
     };
@@ -11,20 +22,19 @@ function Todo({ todo, toggleComplete, removeTodo }) {
     };
 
     return (
-        <ListItem className="todo-item">
-            <Checkbox
+        <ListItem alignItems="flex-start" className="todo-item">
+            <GreenCheckbox
                 type="checkbox"
                 checked={todo.completed}
                 onClick={handleCheckboxClick}
             />
-            <Typography
-                variant="body1"
+            <p
+                className="todo-text"
                 style={{
-                    color: "white",
                     textDecoration: todo.completed ? "line-through" : null
                 }}>
                 {todo.task}
-            </Typography>
+            </p>
             <IconButton onClick={handleRemoveClick}>
                 <CloseIcon />
             </IconButton>

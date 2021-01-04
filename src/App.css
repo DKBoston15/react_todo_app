@@ -1,17 +1,63 @@
+:root {
+    --primary: #38b3f7;
+    --accent1: #2de7f7;
+    --accent2: #23b7c4;
+    --gray: #808080;
+    --black: #333333;
+    --logo: #5c5c5c;
+    --subheader: #474747;
+}
+html {
+    font-family: "Poppins", sans-serif !important;
+}
 .App {
-    background: lightslategray;
+    background: #fffafa; /* Snow */
     margin: auto;
     text-align: center;
-    padding-top: 50vh;
+    padding-top: 20vh;
     height: 100vh;
 }
 .todo-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    padding: 0px !important;
 }
 .todo-item {
+    color: var(--black);
+    width: 25rem !important;
+    align-items: center !important;
+}
+.todo-text {
+    width: 22rem;
+    word-break: break-all;
+}
+.cardWrapper {
+    background-image: linear-gradient(to right, var(--primary), var(--accent1));
+    width: 25rem;
+    padding-top: 3rem;
+    border-radius: 10px;
+    margin: auto;
+}
+.todo-card {
+    margin: auto;
+    width: 25rem;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+}
+.todo-form {
     display: flex;
-    justify-content: center !important;
+    align-items: center;
+    justify-content: space-evenly;
+}
+h1 {
+    color: var(--logo);
+    font-family: "Poppins", sans-serif !important;
+}
+.todo-button {
+    width: 7rem;
+    color: white !important;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 600 !important;
+    background: var(--primary) !important;
+}
+.todo-button:hover {
+    background: var(--accent1) !important;
 }
