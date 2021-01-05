@@ -61,3 +61,14 @@ h1 {
 .todo-button:hover {
     background: var(--accent1) !important;
 }
+.menu-button {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+.close-button {
+    position: fixed !important;
+    top: 0 !important;
+    left: 5rem !important;
+    cursor: pointer;
+}

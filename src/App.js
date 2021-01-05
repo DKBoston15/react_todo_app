@@ -2,10 +2,9 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import TodoForm from "./Components/TodoForm";
 import TodoList from "./Components/TodoList";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardHeader from "@material-ui/core/CardHeader";
+import NavDrawer from "./Components/NavDrawer";
+import { Card, CardActions, CardContent, Button } from "@material-ui/core";
+import { Menu, Close } from "@material-ui/icons";
 
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
@@ -47,8 +46,24 @@ function App() {
         setTodos(todos.filter((todo) => todo.id !== id));
     };
 
+    const [open, setToggleDrawer] = useState(false);
+    let toggleDrawer = () => {
+        setToggleDrawer(!open);
+    };
+    let closeIcon;
+    if (open) {
+        closeIcon = <Close onClick={toggleDrawer} className="close-button" />;
+    } else {
+        closeIcon = null;
+    }
+
     return (
         <div className="App">
+            <Button onClick={toggleDrawer} className="menu-button">
+                <Menu fontSize="large" />
+            </Button>
+            {closeIcon}
+            <NavDrawer open={open} />
             <div className="cardWrapper">
                 <Card className="todo-card">
                     <h1>Todos</h1>
