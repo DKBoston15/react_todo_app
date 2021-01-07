@@ -4,8 +4,9 @@ import NavList from "./NavList";
 import { v4 as uuid } from "uuid";
 import NewNavItemModal from "./NewNavItemModal";
 import AddIcon from "@material-ui/icons/Add";
+import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 
-function NavDrawer({ open }) {
+function NavDrawer({ open, toggleDrawer }) {
     const [navItems, setNavItems] = useState([]);
     const [input, setInput] = useState();
     const [openModal, setOpenModal] = useState(false);
@@ -37,10 +38,14 @@ function NavDrawer({ open }) {
         <Drawer variant="persistent" open={open}>
             <div className="drawer-header">
                 <h3>ProdView</h3>
+                <ArrowLeftIcon
+                    onClick={toggleDrawer}
+                    className="drawer-close-icon"
+                />
             </div>
             <div className="drawer-section-header">
                 <p>Sections</p>
-                <AddIcon onClick={handleOpen} />
+                <AddIcon className="add-section-icon" onClick={handleOpen} />
             </div>
             <Divider />
             <Modal

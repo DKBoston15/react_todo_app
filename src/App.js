@@ -5,7 +5,7 @@ import TodoList from "./Components/TodoList";
 import NavDrawer from "./Components/NavDrawer";
 
 import { Card, CardActions, CardContent, Button } from "@material-ui/core";
-import { Menu, Close } from "@material-ui/icons";
+import { Menu } from "@material-ui/icons";
 
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
@@ -51,20 +51,13 @@ function App() {
     let toggleDrawer = () => {
         setToggleDrawer(!open);
     };
-    let closeIcon;
-    if (open) {
-        closeIcon = <Close onClick={toggleDrawer} className="close-button" />;
-    } else {
-        closeIcon = null;
-    }
 
     return (
         <div className="App">
             <Button onClick={toggleDrawer} className="menu-button">
                 <Menu fontSize="large" />
             </Button>
-            {closeIcon}
-            <NavDrawer open={open} />
+            <NavDrawer toggleDrawer={toggleDrawer} open={open} />
             <div className="cardWrapper">
                 <Card className="todo-card">
                     <h1>Todos</h1>

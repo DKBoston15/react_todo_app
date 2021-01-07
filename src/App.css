@@ -102,8 +102,19 @@ h3 {
     color: white;
     padding: 0 40px 0 40px;
 }
+.add-section-icon {
+    cursor: pointer;
+}
 .drawer-section-header {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    z-index: 1;
+}
+.drawer-close-icon {
+    position: absolute;
+    left: 10;
+    top: -45px;
+    font-size: 150px !important;
+    cursor: pointer;
 }
