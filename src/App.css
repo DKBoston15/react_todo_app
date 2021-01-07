@@ -69,6 +69,18 @@ h1 {
 .close-button {
     position: fixed !important;
     top: 0 !important;
-    left: 5rem !important;
+    left: 15rem !important;
     cursor: pointer;
+}
+.nav-item-list {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 0;
+}
+.nav-item {
+    list-style-type: none;
+    width: 100%;
+    background-blend-mode: lighten;
+    font-family: "Poppins", sans-serif;
 }
