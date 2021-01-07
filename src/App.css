@@ -97,3 +97,13 @@ h1 {
 h3 {
     text-align: center;
 }
+.drawer-header {
+    background-image: linear-gradient(to right, var(--primary), var(--accent1));
+    color: white;
+    padding: 0 40px 0 40px;
+}
+.drawer-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
